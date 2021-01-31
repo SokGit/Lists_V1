@@ -1,16 +1,39 @@
-# This is a sample Python script.
+import matplotlib as plt
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+print(plt)
+import pandas as pd
 
+print(pd)
+pd.DataFrame()
+# Create dict holding the data
+data = {'Sym': ['APPL', 'APPL', 'APPL'], 'Price': [105.00, 117.05, 289.90],
+        'Data': ['2015/12/31', '2017/12/01', '2019/12/27']}
+# Create Dataframe from the data
+positions = pd.DataFrame(data=data)
+print(positions)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Make list of dictionaries
+data = [{'Sym': 'APPL', 'Price': 105.00, 'Date': '2015/12/31'},
+        {'Sym': 'APPL', 'Price': 117.05, 'Date': '2017/12/01'},
+        {'Sym': 'APPL', 'Price': 289.80, 'Date': '2019/12/27'}]
+# Create DataFrame from the list
+positions= pd.DataFrame(data=data)
+print(positions)
 
+# Create a list of lists
+data = [['APPL', 105.00, '2015/12/31'],
+        ['APPL', 117.05, '2017/12/01'],
+        ['APPL', 289.80, '2019/12/27']]
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Define the column names
+columns = ['Sym', 'Price', 'Date']
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Create a DataFrame with the data and column names
+df = pd.DataFrame(data=data, columns=columns)
+print(df)
+
+# Read the data
+stocks = pd.read_csv('pcdg.csv')
+
+# Look at the data
+print(stocks)
